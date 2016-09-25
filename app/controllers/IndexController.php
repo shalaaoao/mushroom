@@ -18,6 +18,7 @@ class IndexController extends BaseController {
 	public function index()
 	{
 		return View::make('index.index');
+
 	}
 
 	public function alert(){
@@ -43,6 +44,7 @@ class IndexController extends BaseController {
 
 	public function love_circle(){
 		return View::make('index.love_circle');
+
 	}
 
 }

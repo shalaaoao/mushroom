@@ -79,5 +79,24 @@ App::down(function()
 |
 */
 
-require app_path().'/filters.php';
+
+
+
+
+require_once app_path().'/start/my_defines.php';
+require_once app_path().'/start/my_helpers.php';
+
+
+
+//打印数据库访问信息到日志
+Event::listen('illuminate.query', function($sql, $param){
+    Log::info($sql .", with[". join(',', $param)."]");
+});
+
+//找不到相关的对象
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+
+App::error(function(ModelNotFoundException $e) {
+    return Response::make('Not Found', 404);
+});
 

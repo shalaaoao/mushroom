@@ -17,9 +17,6 @@ class TestController extends BaseController {
 
 	public function test()
 	{
-		dd(Request::getUri());
-
-
 	}
 
 }

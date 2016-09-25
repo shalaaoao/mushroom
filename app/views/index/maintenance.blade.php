@@ -8,3 +8,4 @@
         欢迎来到小蘑菇工作室{{$name}}
     </body>
 </html>
+this is main

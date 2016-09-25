@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::any('/',['as'=>'/','uses'=>'IndexController@index']);
 Route::any('alert',['as'=>'index.alert','uses'=>'IndexController@alert']);
 Route::any('alert_ajax_pwd',['as'=>'index.alert_ajax_pwd','uses'=>'IndexController@alert_ajax_pwd']);
@@ -22,3 +23,10 @@ Route::any('love_circle',['as'=>'index.love_circle','uses'=>'IndexController@lov
 
 
 Route::any('test',['uses'=>'TestController@test']);
+
+Route::any('/',['uses'=>'IndexController@index']);
+Route::any('test',['uses'=>'TestController@test']);
+
+Route::any('maintenance',function(){
+	return View::make('index.maintenance');
+});
