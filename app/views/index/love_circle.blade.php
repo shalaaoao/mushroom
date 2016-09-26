@@ -30,7 +30,7 @@
             <DIV id="code">
                 <SPAN class="comments">/**</SPAN><BR><SPAN class="space"><SPAN class="comments">*1992—09-28,</SPAN><BR>
                     <SPAN class="space"><SPAN class="comments">*2016-09-28.</SPAN><BR><SPAN class="space"><SPAN class="comments">*/</SPAN><BR>
-                            Birthday people name = <SPAN class="keyword">Miss</SPAN>Panpan Yu<BR><SPAN class="comments">//The girl's birthday 24st anniversary of the day. </SPAN><BR>
+                            Birthday people name = <SPAN class="keyword">Miss</SPAN> Panpan Yu<BR><SPAN class="comments">//The girl's birthday 24st anniversary of the day. </SPAN><BR>
                             Forgive my word is poor.<BR><SPAN class="comments">//In addition to happy birthday to you.I don't know what to say.</SPAN><BR>
                             Say these similar to wish you good health happy every day;<BR><SPAN class="comments">//In a short period of time,</SPAN><BR>
                             I can't think of what to say,although I racked my brains.<BR><SPAN class="comments">//Maybe the programming using me abundant energy(Smile~),</SPAN><BR>
@@ -64,7 +64,7 @@
         var offsetY = $("#loveHeart").height() / 2 - 55;
         var together = new Date();
         together.setFullYear(1992, 9, 28);
-        together.setHours(20);
+        together.setHours(0);
         together.setMinutes(0);
         together.setSeconds(0);
         together.setMilliseconds(0);
