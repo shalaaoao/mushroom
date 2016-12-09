@@ -19,6 +19,8 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="/assets/js/bootstrap.min.js"></script>
 
+    <script src="/assets/js/common.js"></script>
+
     <script>
         var _hmt = _hmt || [];
         (function() {
