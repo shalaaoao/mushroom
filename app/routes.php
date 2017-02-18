@@ -23,11 +23,11 @@ Route::group(['prefix' => 'panzi'], function() {
 	Route::any('love_circle',['as'=>'index.love_circle','uses'=>'IndexController@love_circle']);
 });
 
-Route::group(['prefix' => 'jj'], function() {
-	Route::any('login',['as'=>'jj.login','uses'=>'JjController@login']);
-	Route::any('do_login',['as'=>'jj.do_login','uses'=>'JjController@do_login']);
-	Route::any('index',['as'=>'jj.index','uses'=>'JjController@index']);
-});
+//Route::group(['prefix' => 'jj'], function() {
+//	Route::any('login',['as'=>'jj.login','uses'=>'JjController@login']);
+//	Route::any('do_login',['as'=>'jj.do_login','uses'=>'JjController@do_login']);
+//	Route::any('index',['as'=>'jj.index','uses'=>'JjController@index']);
+//});
 
 
 Route::any('test',['uses'=>'TestController@test']);
