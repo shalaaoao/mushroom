@@ -1,5 +1,5 @@
 <?php
 
-define('appID','wx507b96458b6f420d');
-define('appsecret','368ac7a31535c097ed4e957e3541ac4b');
-define('Token','RfPuariiQuCSoViu');
+const ROLE_COMMON = 0; //路人甲
+const ROLE_SUPER  = 1; //超管
+const ROLE_PANZI  = 2; //目分

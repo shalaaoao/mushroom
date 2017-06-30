@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'mushroom',
+			'database'  => 'shalaaoao',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'cja19950715',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

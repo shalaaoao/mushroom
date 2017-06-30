@@ -1,31 +1,21 @@
 @extends('layouts.header')
 
 @section('content')
-        <!-- Custom CSS -->
-<link href="/assets/css/landing-page.css" rel="stylesheet">
 
-<!-- Custom Fonts -->
+<link href="/assets/css/landing-page.css" rel="stylesheet">
 <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="/assets/css/google-font.css" rel="stylesheet" type="text/css">
-
-<!--自定义CSS-->
 <link href="/assets/css/common.css" rel="stylesheet" type="text/css">
-
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
 <script src="/assets/js/html5shiv.js"></script>
 <script src="/assets/js/1.4.2/respond.min.js"></script>
-<![endif]-->
 
 
+    {{--<script>--}}
+        {{--$(function(){--}}
+            {{--$ (window).unbind ('scroll');--}}
+        {{--})--}}
 
-    <script>
-        $(function(){
-            $ (window).unbind ('scroll');
-        })
-
-    </script>
+    {{--</script>--}}
 
 @if(Request::getUri()=='http://panzi.shalaaoao.com/')
     <!--弹出层--致panzi-->
@@ -49,31 +39,6 @@
         </div><!-- /.modal -->
     </div>
 @endif
-
-
-@if(Request::getUri()=='http://jingjing.shalaaoao.com/' || Request::getUri()=='http://shalaaoao.cc/')
-    <!--弹出层--致jingjing-->
-    <div class="shadow_bg">
-        <div class="modal" style="display:block">
-            <div class="modal-dialog">
-                <div class="modal-content" style="margin-top:200px;">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title">致静静</h4>
-                    </div>
-                    <div class="modal-body" style="text-align:center;">
-                        请问您是亲爱的静静小朋友吗？
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default btn_false">老娘不是</button>
-                        <button type="button" class="btn btn-primary jj_btn_true">就是老娘，你想怎样</button>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-    </div>
-@endif
-
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -269,6 +234,7 @@
     <script>
         $(function(){
             $('.btn_true').click(function(){
+                alert('pp我好想你');
                 window.location.href="{{action('index.alert')}}";
             })
 
@@ -277,12 +243,7 @@
                 window.location.href="http://baidu.com";
             })
 
-
-            $('.jj_btn_true').click(function(){
-                window.location.href="{{action('jj.login')}}";
-            })
-
-            $('body').css('overflow', 'hidden');
+//            $('body').css('overflow', 'hidden');
 
         })
     </script>

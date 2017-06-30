@@ -20,4 +20,8 @@ class SendMail extends Eloquent{
 
 		return '已发送';
 	}
+	
+	public function test(){
+		Log::info('---------------------1111111111111---------------------');
+	}
 }

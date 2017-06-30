@@ -22,6 +22,7 @@ class IndexController extends BaseController {
 	}
 
 	public function alert(){
+		dd('Jindao alert le');
 		return View::make('index.alert');
 	}
 

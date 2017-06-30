@@ -5,6 +5,6 @@
         <title>QQ密码</title>
     </head>
     <body>
-        密码：{{$pwd}}
+        密码：<?php print_r($pwd); ?>
     </body>
 </html>

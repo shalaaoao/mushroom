@@ -81,8 +81,7 @@ App::down(function()
 
 
 
-
-
+require app_path().'/filters.php';
 require_once app_path().'/start/my_defines.php';
 require_once app_path().'/start/my_helpers.php';
 

@@ -11,15 +11,13 @@
 |
 */
 
-App::before(function($request)
-{
-	//
+App::before(function ($request) {
+    //
 });
 
 
-App::after(function($request, $response)
-{
-	//
+App::after(function ($request, $response) {
+    //
 });
 
 /*
@@ -33,25 +31,21 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
-{
-	if (Auth::guest())
-	{
-		if (Request::ajax())
-		{
-			return Response::make('Unauthorized', 401);
-		}
-		else
-		{
-			return Redirect::guest('login');
-		}
-	}
+Route::filter('auth', function () {
+
+    if (Auth::guest()) {
+        if (Request::ajax()) {
+            return Response::make('Unauthorized', 401);
+        } else {
+            $back_url = urlencode(Request::getUri());
+            return Redirect::to(action('user.login') . '?back_url=' . $back_url);
+        }
+    }
 });
 
 
-Route::filter('auth.basic', function()
-{
-	return Auth::basic();
+Route::filter('auth.basic', function () {
+    return Auth::basic();
 });
 
 /*
@@ -65,9 +59,10 @@ Route::filter('auth.basic', function()
 |
 */
 
-Route::filter('guest', function()
-{
-	if (Auth::check()) return Redirect::to('/');
+Route::filter('guest', function () {
+    if (Auth::check()) {
+        return Redirect::to('/');
+    }
 });
 
 /*
@@ -81,10 +76,43 @@ Route::filter('guest', function()
 |
 */
 
-Route::filter('csrf', function()
-{
-	if (Session::token() !== Input::get('_token'))
-	{
-		throw new Illuminate\Session\TokenMismatchException;
-	}
+Route::filter('csrf', function () {
+    if (Session::token() !== Input::get('_token')) {
+        throw new Illuminate\Session\TokenMismatchException;
+    }
+});
+
+
+Route::filter('panzi', function () {
+    $role = Auth::User()->role;
+    if ($role != ROLE_SUPER && $role != ROLE_PANZI) {
+        return Redirect::action('/');
+    }
+});
+
+Route::filter('xhprof_before', function () {
+    xhprof_enable();
+});
+
+Route::filter('xhprof_after', function () {
+    $xhprof_data = xhprof_disable();
+
+    include_once "./xhprof_lib/utils/xhprof_lib.php";
+    include_once "./xhprof_lib/utils/xhprof_runs.php";
+
+    //$xhprof_runs = new XHProfRuns_Default();
+
+    //$run_id = $xhprof_runs->save_run($xhprof_data, "xhprof_foo");
+
+    $all_time = 0;
+    foreach($xhprof_data as $v){
+        $all_time += ($v['wt'] * $v['ct']);
+    }
+
+    //访问时间
+
+
+    Test::create(['str' => Request::getUri(), 'num' => $all_time]);
+
+    //echo "<a href='/xhprof_html/index.php?run=".$run_id."&source=xhprof_foo'>view</a>";
 });
